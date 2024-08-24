@@ -1,5 +1,5 @@
-import React from "react";
-import { Text, Pressable, StyleSheet } from "react-native";
+import { Text, Pressable } from "react-native";
+import { globalStyles } from "../styles/global";
 
 type Props = {
   title: string;
@@ -9,24 +9,13 @@ type Props = {
 export function Button({ title, onPress }: Props) {
   return (
     <Pressable
-      style={({ pressed }) => [styles.button, { opacity: pressed ? 0.8 : 1.0 }]}
+      style={({ pressed }) => [
+        globalStyles.btn,
+        { opacity: pressed ? 0.8 : 1.0 },
+      ]}
       onPress={onPress}
     >
-      <Text style={styles.buttonText}>{title}</Text>
+      <Text style={globalStyles.btnText}>{title}</Text>
     </Pressable>
   );
 }
-
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: "#000000",
-    borderRadius: 10,
-    paddingVertical: 15,
-    paddingHorizontal: 25,
-  },
-  buttonText: {
-    fontSize: 16,
-    color: "#ffffff",
-    textAlign: "center",
-  },
-});
