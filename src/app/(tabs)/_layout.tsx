@@ -4,7 +4,12 @@ import { colors } from "../../styles/colors";
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: colors.blue[400] }}>
+    <Tabs
+      screenOptions={{
+        tabBarInactiveTintColor: colors.gray[400],
+        tabBarActiveTintColor: colors.blue[400],
+      }}
+    >
       <Tabs.Screen
         name={"home"}
         options={{
