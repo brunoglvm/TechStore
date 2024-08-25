@@ -1,7 +1,9 @@
 import { Text, StyleSheet, Image } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
+
 import { Button } from "../components/button";
+import { colors } from "../styles/colors";
 import { globalStyles } from "../styles/global";
 
 export default function Teste() {
@@ -34,7 +36,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#E9F0F7",
+    backgroundColor: colors.offWhite,
   },
   logo: {
     width: 200,
