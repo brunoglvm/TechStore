@@ -1,39 +1,53 @@
 import { Tabs } from "expo-router";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { colors } from "../../styles/colors";
+import { Ionicons } from "@expo/vector-icons";
+import { colors } from "@/styles/colors";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarInactiveTintColor: colors.gray[400],
+        headerShown: false,
+        tabBarStyle: { backgroundColor: colors.white },
+        tabBarInactiveTintColor: colors.gray,
         tabBarActiveTintColor: colors.blue[400],
       }}
     >
       <Tabs.Screen
         name={"home"}
         options={{
-          title: "Home",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name={"home"} size={28} color={color} />
+          tabBarLabel: () => null,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "home" : "home-outline"}
+              size={24}
+              color={color}
+            />
           ),
         }}
       />
       <Tabs.Screen
         name={"categories"}
         options={{
-          title: "Categories",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name={"archive"} size={28} color={color} />
+          tabBarLabel: () => null,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "archive" : "archive-outline"}
+              size={24}
+              color={color}
+            />
           ),
         }}
       />
       <Tabs.Screen
         name={"about"}
         options={{
-          title: "About me",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name={"user"} size={28} color={color} />
+          tabBarLabel: () => null,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "person" : "person-outline"}
+              size={24}
+              color={color}
+            />
           ),
         }}
       />

@@ -1,4 +1,4 @@
-import { Text, StyleSheet, Image } from "react-native";
+import { StyleSheet, Text, Image } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
