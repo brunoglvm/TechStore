@@ -1,4 +1,5 @@
 import { View, StyleSheet, Text } from "react-native";
+
 import { colors } from "@/styles/colors";
 
 export default function Categories() {

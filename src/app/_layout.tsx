@@ -10,7 +10,8 @@ import {
   Inter_500Medium,
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
-import { Loading } from "../components/loading";
+
+import { Loading } from "@/components/loading";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({

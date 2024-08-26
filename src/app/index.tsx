@@ -2,9 +2,9 @@ import { StyleSheet, Text, Image } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
-import { Button } from "../components/button";
-import { colors } from "../styles/colors";
-import { globalStyles } from "../styles/global";
+import { Button } from "@/components/button";
+import { colors } from "@/styles/colors";
+import { globalStyles } from "@/styles/global";
 
 export default function Teste() {
   function handleStart() {
