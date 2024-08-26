@@ -14,6 +14,7 @@ export const globalStyles = StyleSheet.create({
     fontSize: 16,
     color: colors.blue[600],
   },
+
   btnText: {
     fontFamily: fontFamily.interBd,
     fontSize: 16,
@@ -25,5 +26,21 @@ export const globalStyles = StyleSheet.create({
     paddingHorizontal: 24,
     backgroundColor: colors.blue[500],
     borderRadius: 8,
+  },
+
+  productTitle: {
+    fontFamily: fontFamily.interBd,
+    fontSize: 16,
+    color: colors.blue[700],
+  },
+  productDesc: {
+    fontFamily: fontFamily.interReg,
+    fontSize: 12,
+    color: colors.gray[400],
+  },
+  productPrice: {
+    fontFamily: fontFamily.interMd,
+    fontSize: 16,
+    color: colors.blue[400],
   },
 });

@@ -1,11 +1,20 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 
 import { colors } from "@/styles/colors";
+import { getAllProducts } from "@/services/product";
+import { ProductItem } from "@/components/product-item";
 
 export default function Home() {
+  const products = getAllProducts();
+
   return (
     <View style={styles.container}>
-      <Text></Text>
+      <FlatList
+        data={products}
+        renderItem={({ item }) => <ProductItem data={item} />}
+        keyExtractor={(item) => item.id.toString()}
+        style={styles.list}
+      />
     </View>
   );
 }
@@ -16,5 +25,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.offWhite,
+  },
+  list: {
+    flex: 1,
+    width: "100%",
+    padding: 20,
   },
 });
