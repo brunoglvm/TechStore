@@ -1,11 +1,11 @@
-import { View, StyleSheet, Text } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 
 import { colors } from "@/styles/colors";
 
 export default function About() {
   return (
     <View style={styles.container}>
-      <Text></Text>
+      <Text>About</Text>
     </View>
   );
 }

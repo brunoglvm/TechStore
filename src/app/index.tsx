@@ -2,11 +2,11 @@ import { StyleSheet, Text, Image } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
-import { Button } from "@/components/button";
 import { colors } from "@/styles/colors";
 import { globalStyles } from "@/styles/global";
+import { Button } from "@/components/button";
 
-export default function Teste() {
+export default function Screen() {
   function handleStart() {
     router.replace("/home");
   }

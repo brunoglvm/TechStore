@@ -1,4 +1,5 @@
-import { View, StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import { colors } from "@/styles/colors";
 import { getAllProducts } from "@/services/product";
@@ -8,14 +9,17 @@ export default function Home() {
   const products = getAllProducts();
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={products}
-        renderItem={({ item }) => <ProductItem data={item} />}
-        keyExtractor={(item) => item.id.toString()}
-        style={styles.list}
-      />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <FlatList
+          data={products}
+          renderItem={({ item }) => <ProductItem data={item} />}
+          keyExtractor={(item) => item.id.toString()}
+          style={styles.list}
+          showsVerticalScrollIndicator={false}
+        />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -29,6 +33,6 @@ const styles = StyleSheet.create({
   list: {
     flex: 1,
     width: "100%",
-    padding: 20,
+    paddingHorizontal: 24,
   },
 });

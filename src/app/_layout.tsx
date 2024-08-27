@@ -1,4 +1,5 @@
 import { Stack } from "expo-router";
+import { StatusBar } from "react-native";
 import {
   useFonts,
   Montserrat_400Regular,
@@ -8,9 +9,11 @@ import {
 import {
   Inter_400Regular,
   Inter_500Medium,
+  Inter_600SemiBold,
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
 
+import { colors } from "@/styles/colors";
 import { Loading } from "@/components/loading";
 
 export default function RootLayout() {
@@ -20,6 +23,7 @@ export default function RootLayout() {
     Montserrat_700Bold,
     Inter_400Regular,
     Inter_500Medium,
+    Inter_600SemiBold,
     Inter_700Bold,
   });
 
@@ -28,9 +32,12 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name={"index"}></Stack.Screen>
-      <Stack.Screen name={"(tabs)"}></Stack.Screen>
-    </Stack>
+    <>
+      <StatusBar backgroundColor={colors.offWhite} barStyle={"dark-content"} />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name={"index"}></Stack.Screen>
+        <Stack.Screen name={"(tabs)"}></Stack.Screen>
+      </Stack>
+    </>
   );
 }
