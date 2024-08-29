@@ -1,18 +1,23 @@
 import { View, StyleSheet, Text, Image, Pressable } from "react-native";
+import { Link } from "expo-router";
 
 import { Product } from "@/types/product";
-import { Link } from "expo-router";
 import { colors } from "@/styles/colors";
 import { globalStyles } from "@/styles/global";
 
 type Props = {
   data: Product;
+  isLastItem: boolean;
 };
 
-export function ProductItem({ data }: Props) {
+export function ProductItem({ data, isLastItem }: Props) {
   return (
-    <Link href={`/product/${data.id}`} asChild>
-      <Pressable style={styles.container}>
+    <Link
+      href={`/product/${data.id}`}
+      asChild
+      style={[styles.container, isLastItem && { marginBottom: 20 }]}
+    >
+      <Pressable>
         <Image source={{ uri: data.image }} style={styles.img} />
         <View style={styles.info}>
           <Text style={globalStyles.productTitle}>{data.title}</Text>
@@ -28,8 +33,8 @@ export function ProductItem({ data }: Props) {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 20,
     flexDirection: "row",
-    marginBottom: 20,
   },
   img: {
     width: 100,
