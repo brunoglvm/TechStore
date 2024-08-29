@@ -22,6 +22,7 @@ export default function CategoryLayout() {
           headerTitleAlign: "center",
         }}
       />
+      <Stack.Screen name={"[id]"} />
     </Stack>
   );
 }

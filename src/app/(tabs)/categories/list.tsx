@@ -5,7 +5,7 @@ import { colors } from "@/styles/colors";
 import { getAllCategories } from "@/services/category";
 import { CategoryItem } from "@/components/category-item";
 
-export default function Home() {
+export default function List() {
   const categories = getAllCategories();
 
   return (
