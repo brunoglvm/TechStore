@@ -35,8 +35,9 @@ export default function RootLayout() {
     <>
       <StatusBar backgroundColor={colors.offWhite} barStyle={"dark-content"} />
       <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name={"index"}></Stack.Screen>
-        <Stack.Screen name={"(tabs)"}></Stack.Screen>
+        <Stack.Screen name={"index"} />
+        <Stack.Screen name={"(tabs)"} options={{ title: "Products" }} />
+        <Stack.Screen name={"product/[id]"} options={{ headerShown: true }} />
       </Stack>
     </>
   );
