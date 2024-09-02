@@ -39,13 +39,20 @@ export default function DynamicProduct() {
             resizeMode={"cover"}
             style={styles.img}
           />
-          <Text style={globalStyles.productTitle}>{product.title}</Text>
-          <Text style={globalStyles.productDesc}>{product.description}</Text>
-        </ScrollView>
+          <Text style={[globalStyles.productTitle, { fontSize: 28 }]}>
+            {product.title}
+          </Text>
+          <Text style={[globalStyles.productDesc, { fontSize: 14 }]}>
+            {product.description}
+          </Text>
+          <Text style={[globalStyles.productPrice, { fontSize: 28 }]}>
+            ${product.price.toFixed(2)}
+          </Text>
 
-        <View style={styles.btnArea}>
-          <Button title={"Buy Now"} onPress={handleBuyBtn}></Button>
-        </View>
+          <View style={styles.btnArea}>
+            <Button title={"Buy Now"} onPress={handleBuyBtn}></Button>
+          </View>
+        </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -59,14 +66,12 @@ const styles = StyleSheet.create({
   img: {
     width: "100%",
     height: 250,
-    marginBottom: 20,
+    marginBottom: 12,
     borderRadius: 8,
   },
   area: {
     flex: 1,
     padding: 12,
   },
-  btnArea: {
-    padding: 12,
-  },
+  btnArea: {},
 });
