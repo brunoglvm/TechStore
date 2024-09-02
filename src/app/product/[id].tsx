@@ -3,6 +3,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Stack, router, useLocalSearchParams } from "expo-router";
 
 import { getProductById } from "@/services/product";
+import { colors } from "@/styles/colors";
 import { globalStyles } from "@/styles/global";
 import { Button } from "@/components/button";
 
@@ -17,13 +18,21 @@ export default function DynamicProduct() {
   }
 
   function handleBuyBtn() {
-    alert(`Test ${product?.title}`);
+    alert(`You have selected ${product?.title}`);
   }
 
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <Stack.Screen options={{ title: "" }}></Stack.Screen>
+        <Stack.Screen
+          options={{
+            title: "",
+            headerStyle: {
+              backgroundColor: colors.offWhite,
+            },
+            headerShadowVisible: false,
+          }}
+        ></Stack.Screen>
         <ScrollView style={styles.area}>
           <Image
             source={{ uri: product.image }}
@@ -45,6 +54,7 @@ export default function DynamicProduct() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.offWhite,
   },
   img: {
     width: "100%",
