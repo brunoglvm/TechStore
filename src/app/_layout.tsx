@@ -33,10 +33,10 @@ export default function RootLayout() {
 
   return (
     <>
-      <StatusBar backgroundColor={colors.offWhite} barStyle={"dark-content"} />
+      <StatusBar barStyle={"dark-content"} />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name={"index"} />
-        <Stack.Screen name={"(tabs)"} />
+        <Stack.Screen name={"(tabs)"} options={{ title: "All Products" }} />
         <Stack.Screen name={"product/[id]"} options={{ headerShown: true }} />
       </Stack>
     </>

@@ -26,7 +26,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name={"home"}
         options={{
-          title: "Products",
+          title: "All Products",
           tabBarLabel: () => null,
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
@@ -56,7 +56,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name={"about"}
         options={{
-          title: "About me",
+          title: "@brunoglvm",
           tabBarLabel: () => null,
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
