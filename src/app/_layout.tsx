@@ -1,11 +1,6 @@
 import { Stack } from "expo-router";
 import { StatusBar } from "react-native";
-import {
-  useFonts,
-  Montserrat_400Regular,
-  Montserrat_500Medium,
-  Montserrat_700Bold,
-} from "@expo-google-fonts/montserrat";
+import { useFonts, Montserrat_700Bold } from "@expo-google-fonts/montserrat";
 import {
   Inter_400Regular,
   Inter_500Medium,
@@ -13,13 +8,10 @@ import {
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
 
-import { colors } from "@/styles/colors";
 import { Loading } from "@/components/loading";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
-    Montserrat_400Regular,
-    Montserrat_500Medium,
     Montserrat_700Bold,
     Inter_400Regular,
     Inter_500Medium,

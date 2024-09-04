@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView, View, Image, Text } from "react-native";
+import { StyleSheet, ScrollView, View, Image, Text, Alert } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Stack, router, useLocalSearchParams } from "expo-router";
 
@@ -18,7 +18,7 @@ export default function DynamicProduct() {
   }
 
   function handleBuyBtn() {
-    alert(`You have selected ${product?.title}`);
+    Alert.alert(`${product?.title}`, `You have selected ${product?.title}.`);
   }
 
   return (
@@ -33,13 +33,19 @@ export default function DynamicProduct() {
             headerShadowVisible: false,
           }}
         ></Stack.Screen>
-        <ScrollView style={styles.area}>
+        <ScrollView
+          contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+        >
           <Image
             source={{ uri: product.image }}
             resizeMode={"cover"}
             style={styles.img}
           />
-          <Text style={[globalStyles.productTitle, { fontSize: 28 }]}>
+
+          <Text
+            style={[globalStyles.productTitle, { fontSize: 28, marginTop: 12 }]}
+          >
             {product.title}
           </Text>
           <Text style={[globalStyles.productDesc, { fontSize: 14 }]}>
@@ -66,12 +72,14 @@ const styles = StyleSheet.create({
   img: {
     width: "100%",
     height: 250,
-    marginBottom: 12,
     borderRadius: 8,
   },
-  area: {
-    flex: 1,
+  scrollContent: {
+    flexGrow: 1,
+    justifyContent: "center",
     padding: 12,
   },
-  btnArea: {},
+  btnArea: {
+    marginTop: 24,
+  },
 });
