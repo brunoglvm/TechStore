@@ -14,6 +14,11 @@ export const globalStyles = StyleSheet.create({
     fontSize: 16,
     color: colors.blue[600],
   },
+  highlightedText: {
+    fontFamily: fontFamily.interMd,
+    fontSize: 16,
+    color: colors.blue[400],
+  },
   btnText: {
     fontFamily: fontFamily.interBd,
     fontSize: 16,

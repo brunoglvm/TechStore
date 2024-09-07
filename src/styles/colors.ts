@@ -13,4 +13,6 @@ export const colors = {
     600: "#162B3E",
     700: "#061422",
   },
+
+  offblack: "#0D0F17",
 };

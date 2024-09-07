@@ -28,11 +28,11 @@ export default function TabLayout() {
         options={{
           title: "All Products",
           tabBarLabel: () => null,
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused, color }) => (
             <Ionicons
               name={focused ? "home" : "home-outline"}
-              size={24}
               color={color}
+              size={24}
             />
           ),
         }}
@@ -43,11 +43,11 @@ export default function TabLayout() {
         options={{
           headerShown: false,
           tabBarLabel: () => null,
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused, color }) => (
             <Ionicons
               name={focused ? "folder" : "folder-outline"}
-              size={24}
               color={color}
+              size={24}
             />
           ),
         }}
@@ -56,13 +56,13 @@ export default function TabLayout() {
       <Tabs.Screen
         name={"about"}
         options={{
-          title: "@brunoglvm",
+          title: "About",
           tabBarLabel: () => null,
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused, color }) => (
             <Ionicons
               name={focused ? "person" : "person-outline"}
-              size={24}
               color={color}
+              size={24}
             />
           ),
         }}

@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   overlayText: {
-    ...globalStyles.btnText,
-    fontSize: 24,
+    ...globalStyles.header,
+    color: colors.offWhite,
     textShadowColor: "rgba(0, 0, 0, 0.3)",
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 4,
