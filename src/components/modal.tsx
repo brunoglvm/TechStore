@@ -1,13 +1,20 @@
-import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
+import { StyleSheet, View, Text, Linking } from "react-native";
 import Modal from "react-native-modal";
 
 import { colors } from "@/styles/colors";
+import { globalStyles } from "@/styles/global";
+import { Button } from "./button";
 
-export default function CustomModal({ isVisible, onClose }: any) {
-  const handleConfirm = () => {
+type Props = {
+  isVisible: boolean;
+  onClose: () => void;
+};
+
+export default function CustomModal({ isVisible, onClose }: Props) {
+  function handleConfirm() {
     Linking.openURL("https://github.com/brunoglvm");
     onClose();
-  };
+  }
 
   return (
     <Modal
@@ -17,45 +24,44 @@ export default function CustomModal({ isVisible, onClose }: any) {
       backdropColor={colors.offblack}
       isVisible={isVisible}
       onBackdropPress={onClose}
-      style={styles.modal}
     >
       <View style={styles.modalContent}>
-        <Text style={styles.modalText}>
+        <Text
+          style={[
+            globalStyles.highlightedText,
+            { color: colors.blue[700], marginBottom: 20 },
+          ]}
+        >
           Do you want to open my GitHub page?
         </Text>
-        <Pressable style={styles.modalButton} onPress={handleConfirm}>
-          <Text style={styles.modalButtonText}>Open</Text>
-        </Pressable>
-        <Pressable style={styles.modalButton} onPress={onClose}>
-          <Text style={styles.modalButtonText}>Cancel</Text>
-        </Pressable>
+
+        <View style={styles.btnContainer}>
+          <Button title={"Open"} onPress={handleConfirm} />
+          <Button
+            title={"Close"}
+            onPress={onClose}
+            style={{ backgroundColor: colors.gray[300] }}
+          />
+        </View>
       </View>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
-  modal: {
+  modalContent: {
+    height: 180,
     justifyContent: "center",
     alignItems: "center",
-  },
-  modalContent: {
-    backgroundColor: colors.offWhite,
     padding: 12,
+    backgroundColor: colors.offWhite,
     borderRadius: 8,
   },
-  modalText: {
-    fontSize: 16,
-    marginBottom: 20,
-  },
-  modalButton: {
-    backgroundColor: colors.blue[500],
-    padding: 10,
-    borderRadius: 5,
-    margin: 5,
-  },
-  modalButtonText: {
-    color: colors.offWhite,
-    fontSize: 16,
+  btnContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    marginTop: 12,
+    paddingHorizontal: 32,
   },
 });

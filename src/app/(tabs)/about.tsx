@@ -10,9 +10,9 @@ import CustomModal from "@/components/modal";
 export default function About() {
   const [isModalVisible, setModalVisible] = useState(false);
 
-  const toggleModal = () => {
+  function toggleModal() {
     setModalVisible(!isModalVisible);
-  };
+  }
 
   return (
     <SafeAreaProvider>
