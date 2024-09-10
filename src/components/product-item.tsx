@@ -18,7 +18,11 @@ export function ProductItem({ data, isLastItem }: Props) {
       style={[styles.container, isLastItem && { marginBottom: 20 }]}
     >
       <Pressable>
-        <Image source={{ uri: data.image }} style={styles.img} />
+        <Image
+          source={{ uri: data.image }}
+          resizeMode={"cover"}
+          style={styles.img}
+        />
         <View style={styles.info}>
           <Text style={globalStyles.productTitle}>{data.title}</Text>
           <Text style={globalStyles.productDesc}>{data.description}</Text>
