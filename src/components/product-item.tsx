@@ -11,6 +11,13 @@ type Props = {
 };
 
 export function ProductItem({ data, isLastItem }: Props) {
+  function limitCharacters(text: string, charLimit: number) {
+    if (text.length > charLimit) {
+      return text.substring(0, charLimit) + "...";
+    }
+    return text;
+  }
+
   return (
     <Link
       href={`/product/${data.id}`}
@@ -25,7 +32,9 @@ export function ProductItem({ data, isLastItem }: Props) {
         />
         <View style={styles.info}>
           <Text style={globalStyles.productTitle}>{data.title}</Text>
-          <Text style={globalStyles.productDesc}>{data.description}</Text>
+          <Text style={globalStyles.productDesc}>
+            {limitCharacters(data.description, 71)}
+          </Text>
           <Text style={globalStyles.productPrice}>
             ${data.price.toFixed(2)}
           </Text>
