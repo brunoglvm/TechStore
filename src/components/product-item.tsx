@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Image, Pressable } from "react-native";
+import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 
 import { Product } from "@/types/product";
@@ -17,7 +17,7 @@ export function ProductItem({ data, isLastItem }: Props) {
       asChild
       style={[styles.container, isLastItem && { marginBottom: 20 }]}
     >
-      <Pressable>
+      <TouchableOpacity activeOpacity={0.8}>
         <Image
           source={{ uri: data.image }}
           resizeMode={"cover"}
@@ -30,7 +30,7 @@ export function ProductItem({ data, isLastItem }: Props) {
             ${data.price.toFixed(2)}
           </Text>
         </View>
-      </Pressable>
+      </TouchableOpacity>
     </Link>
   );
 }

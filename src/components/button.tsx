@@ -1,4 +1,4 @@
-import { Text, Pressable, StyleProp, ViewStyle } from "react-native";
+import { Text, TouchableOpacity, StyleProp, ViewStyle } from "react-native";
 
 import { globalStyles } from "@/styles/global";
 
@@ -10,15 +10,12 @@ type Props = {
 
 export function Button({ title, onPress, style }: Props) {
   return (
-    <Pressable
-      style={({ pressed }) => [
-        globalStyles.btn,
-        { opacity: pressed ? 0.8 : 1.0 },
-        style,
-      ]}
+    <TouchableOpacity
+      activeOpacity={0.8}
+      style={[globalStyles.btn, style]}
       onPress={onPress}
     >
       <Text style={globalStyles.btnText}>{title}</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 }

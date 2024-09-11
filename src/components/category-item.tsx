@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Pressable, View, Text } from "react-native";
+import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 
 import { Category } from "@/types/category";
@@ -11,8 +11,8 @@ type Props = {
 
 export function CategoryItem({ data }: Props) {
   return (
-    <Link href={`/categories/${data.id}`} asChild>
-      <Pressable style={styles.container}>
+    <Link href={`/categories/${data.id}`} asChild style={styles.container}>
+      <TouchableOpacity activeOpacity={0.8}>
         <Image
           source={{ uri: data.cover }}
           resizeMode={"cover"}
@@ -21,7 +21,7 @@ export function CategoryItem({ data }: Props) {
         <View style={styles.overlay}>
           <Text style={styles.overlayText}>{data.title}</Text>
         </View>
-      </Pressable>
+      </TouchableOpacity>
     </Link>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, Image, Pressable, Text, View } from "react-native";
+import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -17,10 +17,7 @@ export default function About() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <Pressable
-          onPress={toggleModal}
-          style={({ pressed }) => [{ opacity: pressed ? 0.8 : 1 }]}
-        >
+        <TouchableOpacity activeOpacity={0.8} onPress={toggleModal}>
           <Image
             source={require("@/assets/avatar.jpg")}
             resizeMode="cover"
@@ -35,7 +32,7 @@ export default function About() {
             />
             <Text style={styles.overlayText}>GitHub</Text>
           </View>
-        </Pressable>
+        </TouchableOpacity>
         <Text
           style={[
             globalStyles.header,
