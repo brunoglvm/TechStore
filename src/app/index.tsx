@@ -14,11 +14,10 @@ export default function Screen() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        {/* <Image
-          source={require("")}
-          style={styles.logo}
-          resizeMode="cover"
-        /> */}
+        <Image
+          source={require("../assets/logo.png")}
+          style={{ width: 100, height: 100 }}
+        />
         <Text style={[globalStyles.header, { marginBottom: 4 }]}>
           TechStore
         </Text>
@@ -37,10 +36,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.offWhite,
-  },
-  logo: {
-    width: 200,
-    height: 200,
-    marginBottom: 20,
   },
 });
