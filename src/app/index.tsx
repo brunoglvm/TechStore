@@ -1,10 +1,12 @@
-import { StyleSheet, Text, Image } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
 import { colors } from "@/styles/colors";
 import { globalStyles } from "@/styles/global";
 import { Button } from "@/components/button";
+
+import Logo from "@/assets/logo.svg";
 
 export default function Screen() {
   function handleStart() {
@@ -14,10 +16,7 @@ export default function Screen() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <Image
-          source={require("../assets/logo.png")}
-          style={{ width: 100, height: 100 }}
-        />
+        <Logo width={100} height={100} />
         <Text style={[globalStyles.header, { marginBottom: 4 }]}>
           TechStore
         </Text>
