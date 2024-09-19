@@ -8,7 +8,7 @@ import { globalStyles } from "@/styles/global";
 import CustomModal from "@/components/modal";
 
 export default function About() {
-  const [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setModalVisible] = useState<boolean>(false);
 
   function toggleModal() {
     setModalVisible(!isModalVisible);

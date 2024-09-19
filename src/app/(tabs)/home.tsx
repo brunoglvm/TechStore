@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
@@ -9,16 +10,22 @@ import { ProductItem } from "@/components/product-item";
 export default function Home() {
   const products = getAllProducts();
 
+  const [search, setSearch] = useState<string>("");
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <SearchFilter />
+        <SearchFilter search={search} setSearch={setSearch} />
         <FlatList
-          data={products}
+          data={filteredProducts}
           renderItem={({ item, index }) => (
             <ProductItem
               data={item}
-              isLastItem={index === products.length - 1}
+              isLastItem={index === filteredProducts.length - 1}
             />
           )}
           keyExtractor={(item) => item.id.toString()}

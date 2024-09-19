@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { StyleSheet } from "react-native";
 import { SearchBar } from "@rneui/base";
 import { Ionicons } from "@expo/vector-icons";
@@ -6,9 +5,12 @@ import { Ionicons } from "@expo/vector-icons";
 import { colors } from "@/styles/colors";
 import { globalStyles } from "@/styles/global";
 
-export function SearchFilter() {
-  const [search, setSearch] = useState("");
+type Props = {
+  search: string;
+  setSearch: (value: string) => void;
+};
 
+export function SearchFilter({ search, setSearch }: Props) {
   return (
     <SearchBar
       onChangeText={(text) => setSearch(text)}
