@@ -3,6 +3,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import { colors } from "@/styles/colors";
 import { getAllProducts } from "@/services/product";
+import { SearchFilter } from "@/components/search-filter";
 import { ProductItem } from "@/components/product-item";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
+        <SearchFilter />
         <FlatList
           data={products}
           renderItem={({ item, index }) => (
@@ -31,11 +33,11 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 24,
     backgroundColor: colors.offWhite,
   },
   list: {
     flex: 1,
     width: "100%",
-    paddingHorizontal: 24,
   },
 });

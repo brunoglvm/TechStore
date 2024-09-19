@@ -3,6 +3,7 @@ export const colors = {
   offWhite: "#F4F8FB",
 
   gray: {
+    200: "#E1E6EA",
     300: "#909AA3",
     400: "#33393E",
   },

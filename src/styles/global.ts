@@ -31,6 +31,17 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: colors.blue[500],
     borderRadius: 8,
   },
+  searchBarInput: {
+    height: 40,
+    marginBottom: 4,
+    backgroundColor: colors.gray[200],
+    borderRadius: 4,
+  },
+  searchBarText: {
+    fontFamily: fontFamily.interReg,
+    fontSize: 14,
+    color: colors.gray[400],
+  },
   productTitle: {
     fontFamily: fontFamily.interSb,
     fontSize: 16,
